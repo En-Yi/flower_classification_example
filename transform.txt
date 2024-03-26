@@ -1,0 +1,11 @@
+img = cv2.imread('/kaggle/input/flowers-recognition/flowers/daisy/10140303196_b88d3d6cec.jpg')
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+# 將NumPy數組轉換為PyTorch張量
+image_pil = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+
+# 定義轉換操作
+transform = transforms.ToTensor()
+
+# 將Pillow的Image對象轉換為PyTorch張量
+tensor = transform(image_pil)
+show_image_prediction(tensor,0)
